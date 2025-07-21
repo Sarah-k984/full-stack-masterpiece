@@ -4,7 +4,7 @@
 
 **URL**:(https://full-stack-masterpiece.lovable.app)
 
-this project is built u using I,loveable app.
+this project is built u using AI,loveable app.
 **Use Lovable**
 
 Simply visit the [Lovable Project](https://lovable.dev/projects/2bd6e26b-a302-4fef-b328-22a41d8cc66b) and start prompting.
