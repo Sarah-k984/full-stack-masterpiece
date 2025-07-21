@@ -1,18 +1,32 @@
 import { useState } from "react";
+import { useLocation, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { BookOpen, Menu, X, User, GraduationCap } from "lucide-react";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
+  const isActiveRoute = (path: string) => {
+    return location.pathname === path;
+  };
+
+  const getLinkClass = (path: string) => {
+    return `transition-colors ${
+      isActiveRoute(path) 
+        ? "text-primary font-medium border-b-2 border-primary pb-1" 
+        : "text-foreground hover:text-primary"
+    }`;
+  };
 
   return (
     <header className="bg-background/95 backdrop-blur-sm border-b border-border sticky top-0 z-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
+          <Link to="/" className="flex items-center space-x-2">
             <div className="bg-gradient-primary p-2 rounded-lg">
               <GraduationCap className="h-6 w-6 text-primary-foreground" />
             </div>
@@ -20,16 +34,16 @@ const Header = () => {
               <h1 className="text-xl font-bold text-foreground">Ujuzi Skills</h1>
               <p className="text-xs text-muted-foreground">Empowering Rural Youths</p>
             </div>
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#courses" className="text-foreground hover:text-primary transition-colors">
+            <Link to="/courses" className={getLinkClass("/courses")}>
               Courses
-            </a>
-            <a href="#about" className="text-foreground hover:text-primary transition-colors">
+            </Link>
+            <Link to="/about" className={getLinkClass("/about")}>
               About
-            </a>
+            </Link>
             <a href="#impact" className="text-foreground hover:text-primary transition-colors">
               Impact
             </a>
@@ -66,12 +80,12 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t border-border">
             <nav className="flex flex-col space-y-4">
-              <a href="#courses" className="text-foreground hover:text-primary transition-colors">
+              <Link to="/courses" className={`${getLinkClass("/courses")} block`}>
                 Courses
-              </a>
-              <a href="#about" className="text-foreground hover:text-primary transition-colors">
+              </Link>
+              <Link to="/about" className={`${getLinkClass("/about")} block`}>
                 About
-              </a>
+              </Link>
               <a href="#impact" className="text-foreground hover:text-primary transition-colors">
                 Impact
               </a>
