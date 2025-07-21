@@ -1,13 +1,10 @@
-# Welcome to your Lovable project
+# Welcome to your UJUZI SKILL project
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/2bd6e26b-a302-4fef-b328-22a41d8cc66b
+**URL**:(https://full-stack-masterpiece.lovable.app)
 
-## How can I edit this code?
-
-There are several ways of editing your application.
-
+this project is built u using I,loveable app.
 **Use Lovable**
 
 Simply visit the [Lovable Project](https://lovable.dev/projects/2bd6e26b-a302-4fef-b328-22a41d8cc66b) and start prompting.
