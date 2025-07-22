@@ -221,8 +221,11 @@ const Courses = () => {
                     </Badge>
                   </div>
 
-                  <Button className="w-full bg-gradient-primary shadow-elegant group/btn">
-                    Enroll Now
+                  <Button 
+                    className="w-full bg-gradient-primary shadow-elegant group/btn"
+                    onClick={() => window.location.href = `/course/${course.id}`}
+                  >
+                    View Course
                     <ArrowRight className="h-4 w-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
                   </Button>
                 </CardContent>

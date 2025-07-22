@@ -108,7 +108,7 @@ const FeaturedCourses = () => {
                     <Star className="h-4 w-4 text-yellow-500 mr-1" />
                     <span className="text-sm font-medium">{course.rating}</span>
                   </div>
-                  <Button size="sm" variant="ghost" className="group/btn">
+                  <Button size="sm" variant="ghost" className="group/btn" onClick={() => window.location.href = `/course/${course.id}`}>
                     Learn More
                     <ArrowRight className="h-3 w-3 ml-1 group-hover/btn:translate-x-1 transition-transform" />
                   </Button>
@@ -120,7 +120,7 @@ const FeaturedCourses = () => {
 
         {/* CTA */}
         <div className="text-center">
-          <Button size="lg" className="bg-gradient-primary shadow-elegant">
+          <Button size="lg" className="bg-gradient-primary shadow-elegant" onClick={() => window.location.href = '/courses'}>
             View All Courses
             <ArrowRight className="ml-2 h-4 w-4" />
           </Button>

@@ -55,6 +55,7 @@ const Hero = () => {
               <Button 
                 size="lg" 
                 className="bg-white text-primary hover:bg-white/90 shadow-elegant group"
+                onClick={() => window.location.href = '/courses'}
               >
                 Start Learning Today
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
