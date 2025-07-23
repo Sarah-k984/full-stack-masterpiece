@@ -28,10 +28,14 @@ interface Lesson {
   course_id: string;
   title: string;
   description: string;
-  content_type: 'video' | 'text' | 'quiz';
+  content_type: string;
   content: string;
   duration_minutes: number;
   order_index: number;
+  is_published: boolean;
+  created_at: string;
+  updated_at: string;
+  video_url?: string;
 }
 
 interface LessonProgress {

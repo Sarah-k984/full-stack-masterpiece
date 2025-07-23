@@ -28,17 +28,17 @@ interface Course {
   id: string;
   title: string;
   description: string;
-  long_description?: string;
   duration: string;
   level: string;
   category: string;
   image_url?: string;
-  instructor: string;
+  instructor_id?: string;
   rating: number;
-  student_count: number;
-  is_free: boolean;
-  price?: number;
+  students_count: number;
+  price: number;
+  is_published: boolean;
   created_at: string;
+  updated_at: string;
 }
 
 interface Lesson {
@@ -46,10 +46,14 @@ interface Lesson {
   course_id: string;
   title: string;
   description: string;
-  content_type: 'video' | 'text' | 'quiz';
+  content_type: string;
+  content: string;
   duration_minutes: number;
   order_index: number;
-  is_free_preview: boolean;
+  is_published: boolean;
+  created_at: string;
+  updated_at: string;
+  video_url?: string;
 }
 
 interface Enrollment {
@@ -244,7 +248,7 @@ const CourseDetail = () => {
                 <div className="flex items-center space-x-4 mb-4">
                   <Badge variant="secondary">{course.category}</Badge>
                   <Badge variant="outline">{course.level}</Badge>
-                  {course.is_free && (
+                  {course.price === 0 && (
                     <Badge className="bg-gradient-success">Free</Badge>
                   )}
                 </div>
@@ -259,7 +263,7 @@ const CourseDetail = () => {
                   </div>
                   <div className="flex items-center">
                     <Users className="h-4 w-4 mr-1" />
-                    {course.student_count} students
+                    {course.students_count} students
                   </div>
                   <div className="flex items-center">
                     <Star className="h-4 w-4 mr-1 text-yellow-500" />
@@ -288,7 +292,7 @@ const CourseDetail = () => {
                   </CardHeader>
                   <CardContent>
                     <p className="text-muted-foreground whitespace-pre-line">
-                      {course.long_description || course.description}
+                      {course.description}
                     </p>
                   </CardContent>
                 </Card>
@@ -317,9 +321,6 @@ const CourseDetail = () => {
                                   {lesson.content_type === 'text' && <FileText className="h-4 w-4" />}
                                   {lesson.content_type === 'quiz' && <CheckCircle className="h-4 w-4" />}
                                   <span className="font-medium">{lesson.title}</span>
-                                  {lesson.is_free_preview && (
-                                    <Badge variant="outline" className="text-xs">Free Preview</Badge>
-                                  )}
                                 </div>
                                 <div className="text-sm text-muted-foreground">
                                   {lesson.duration_minutes} minutes
@@ -347,11 +348,11 @@ const CourseDetail = () => {
                   <CardContent>
                     <div className="flex items-center space-x-4 mb-4">
                       <div className="bg-gradient-primary w-12 h-12 rounded-full flex items-center justify-center text-primary-foreground font-bold">
-                        {course.instructor.charAt(0)}
+                        I
                       </div>
                       <div>
-                        <h3 className="font-semibold">{course.instructor}</h3>
-                        <p className="text-sm text-muted-foreground">Course Instructor</p>
+                        <h3 className="font-semibold">Course Instructor</h3>
+                        <p className="text-sm text-muted-foreground">Educational Specialist</p>
                       </div>
                     </div>
                     <p className="text-muted-foreground">
@@ -400,7 +401,7 @@ const CourseDetail = () => {
                     </Button>
                   )}
 
-                  {course.is_free && (
+                  {course.price === 0 && (
                     <p className="text-center text-sm text-success font-medium">
                       This course is completely free!
                     </p>
