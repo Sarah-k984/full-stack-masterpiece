@@ -2,7 +2,7 @@
 
 ## Project info
 
-**URL**:(https://full-stack-masterpiece.lovable.app/)
+**URL**:https:(//full-stack-masterpiece.lovable.app/)
 this project is built up using AI,loveable app.
 <img width="1920" height="972" alt="Screenshot (310)" src="https://github.com/user-attachments/assets/9e906dc2-8808-4c23-90c7-3a8a4c2186e8" />
 
