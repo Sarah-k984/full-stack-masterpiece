@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
-import { Play, ArrowRight, Users, BookOpen, Award } from "lucide-react";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { Play, ArrowRight, Users, BookOpen, Award, X } from "lucide-react";
 import heroImage from "@/assets/hero-education.jpg";
+import demoThumbnail from "@/assets/demo-video-thumbnail.jpg";
 
 const Hero = () => {
   return (
@@ -61,14 +63,54 @@ const Hero = () => {
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Button>
               
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm"
-              >
-                <Play className="mr-2 h-4 w-4" />
-                Watch Demo
-              </Button>
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Button 
+                    size="lg" 
+                    variant="outline" 
+                    className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm"
+                  >
+                    <Play className="mr-2 h-4 w-4" />
+                    Watch Demo
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="max-w-4xl w-full">
+                  <div className="relative">
+                    <div className="relative rounded-lg overflow-hidden bg-black">
+                      <img 
+                        src={demoThumbnail} 
+                        alt="E-Learning Live Classes Demo"
+                        className="w-full h-auto"
+                      />
+                      <div className="absolute inset-0 flex items-center justify-center bg-black/50">
+                        <div className="text-center text-white">
+                          <Play className="mx-auto h-16 w-16 mb-4 opacity-80" />
+                          <h3 className="text-xl font-semibold mb-2">Live E-Learning Demo</h3>
+                          <p className="text-sm opacity-90">Experience interactive online classes with real-time collaboration</p>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+                      <div className="text-center p-4 bg-muted rounded-lg">
+                        <Users className="h-8 w-8 mx-auto mb-2 text-primary" />
+                        <h4 className="font-medium">Interactive Classes</h4>
+                        <p className="text-sm text-muted-foreground">Live video sessions with instructors</p>
+                      </div>
+                      <div className="text-center p-4 bg-muted rounded-lg">
+                        <BookOpen className="h-8 w-8 mx-auto mb-2 text-primary" />
+                        <h4 className="font-medium">Digital Resources</h4>
+                        <p className="text-sm text-muted-foreground">Access materials anywhere, anytime</p>
+                      </div>
+                      <div className="text-center p-4 bg-muted rounded-lg">
+                        <Award className="h-8 w-8 mx-auto mb-2 text-primary" />
+                        <h4 className="font-medium">Certified Learning</h4>
+                        <p className="text-sm text-muted-foreground">Earn recognized certificates</p>
+                      </div>
+                    </div>
+                  </div>
+                </DialogContent>
+              </Dialog>
             </div>
           </div>
 
