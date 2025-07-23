@@ -2,19 +2,20 @@
 
 ## Project info
 
-**URL**:(https://full-stack-masterpiece.lovable.app)
-
+**URL**:(https://full-stack-masterpiece.lovable.app/)
 this project is built up using AI,loveable app.
 <img width="1920" height="972" alt="Screenshot (310)" src="https://github.com/user-attachments/assets/9e906dc2-8808-4c23-90c7-3a8a4c2186e8" />
 
 <img width="1920" height="931" alt="Screenshot (311)" src="https://github.com/user-attachments/assets/791ae3d8-4a31-46e4-88d4-3885cfda64ff" />
 <img width="1920" height="951" alt="Screenshot (312)" src="https://github.com/user-attachments/assets/13b21774-efd1-4ef6-aac8-9b587146f906" />
 
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/2bd6e26b-a302-4fef-b328-22a41d8cc66b) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
+COMPLETED FEATURES
+Authentication System: Sign up/sign in with Supabase auth
+Student Dashboard: Progress tracking, course overview, achievements
+Course Detail Pages: Full course information, enrollment system
+Learning Interface: Lesson-by-lesson learning with progress tracking
+Responsive Design: Mobile-friendly throughout
+Navigation: Header with user authentication state
 
 **Use your preferred IDE**
 
@@ -61,6 +62,7 @@ This project is built with:
 - React
 - shadcn-ui
 - Tailwind CSS
+- superbase for database BackEnd
 
 ## How can I deploy this project?
 
